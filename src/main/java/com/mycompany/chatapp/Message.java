@@ -89,10 +89,9 @@ public class Message {
 
     public static int returnTotalMessages() {
         return totalMessages;
+        
     }
-    public static void resetTotalMessages() {
-    totalMessages = 0;
-    }
+    
      public void storeMessage() {
 
         JSONArray messageList = new JSONArray();
