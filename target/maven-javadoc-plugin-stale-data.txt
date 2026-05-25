@@ -1,0 +1,47 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+--no-fonts
+-classpath
+'C:/Users/DTC/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar;C:/Users/DTC/.m2/repository/junit/junit/4.10/junit-4.10.jar;C:/Users/DTC/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar'
+-encoding
+'UTF-8'
+-protected
+--release
+25
+-sourcepath
+'C:/Users/DTC/Documents/prog/New folder/chatapp/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2026. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/DTC/Documents/prog/New folder/chatapp/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'chatapp 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'chatapp 1.0-SNAPSHOT API'
+com.mycompany.chatapp
+C:\Users\DTC\.m2\repository\com\googlecode\json-simple\json-simple\1.1.1\json-simple-1.1.1.jar = 1779551209789
+C:\Users\DTC\.m2\repository\junit\junit\4.10\junit-4.10.jar = 1779551209940
+C:\Users\DTC\.m2\repository\org\hamcrest\hamcrest-core\1.1\hamcrest-core-1.1.jar = 1779551209787
+C:\Users\DTC\Documents\prog\New folder\chatapp\src\main\java = 1779548292447
+C:\Users\DTC\Documents\prog\New folder\chatapp\target\reports\apidocs\allclasses-index.html = 1779552694283
+C:\Users\DTC\Documents\prog\New folder\chatapp\target\reports\apidocs\allpackages-index.html = 1779552694298
+C:\Users\DTC\Documents\prog\New folder\chatapp\target\reports\apidocs\element-list = 1779552694107
+C:\Users\DTC\Documents\prog\New folder\chatapp\target\reports\apidocs\help-doc.html = 1779552694440
+C:\Users\DTC\Documents\prog\New folder\chatapp\target\reports\apidocs\index-all.html = 1779552694404
+C:\Users\DTC\Documents\prog\New folder\chatapp\target\reports\apidocs\index.html = 1779552694416
+C:\Users\DTC\Documents\prog\New folder\chatapp\target\reports\apidocs\member-search-index.js = 1779552694351
+C:\Users\DTC\Documents\prog\New folder\chatapp\target\reports\apidocs\module-search-index.js = 1779552694310
+C:\Users\DTC\Documents\prog\New folder\chatapp\target\reports\apidocs\overview-tree.html = 1779552694232
+C:\Users\DTC\Documents\prog\New folder\chatapp\target\reports\apidocs\package-search-index.js = 1779552694314
+C:\Users\DTC\Documents\prog\New folder\chatapp\target\reports\apidocs\search.html = 1779552694411
+C:\Users\DTC\Documents\prog\New folder\chatapp\target\reports\apidocs\tag-search-index.js = 1779552694354
+C:\Users\DTC\Documents\prog\New folder\chatapp\target\reports\apidocs\type-search-index.js = 1779552694347
