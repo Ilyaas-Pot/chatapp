@@ -14,6 +14,15 @@ import org.json.simple.JSONObject;
  * @author DTC
  */
 public class Message {
+
+    /**
+     *
+     */
+    public static void resetTotalMessages() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    
     private String messageID;
     private int messageNumber;
     private String recipient;
@@ -80,6 +89,9 @@ public class Message {
 
     public static int returnTotalMessages() {
         return totalMessages;
+    }
+    public static void resetTotalMessages() {
+    totalMessages = 0;
     }
      public void storeMessage() {
 

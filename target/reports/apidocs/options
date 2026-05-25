@@ -1,0 +1,25 @@
+--no-fonts
+-classpath
+'C:/Users/DTC/.m2/repository/com/googlecode/json-simple/json-simple/1.1.1/json-simple-1.1.1.jar;C:/Users/DTC/.m2/repository/junit/junit/4.10/junit-4.10.jar;C:/Users/DTC/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar'
+-encoding
+'UTF-8'
+-protected
+--release
+17
+-sourcepath
+'C:/Users/DTC/Documents/prog/New folder/chatapp/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2026. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/DTC/Documents/prog/New folder/chatapp/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'chatapp 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'chatapp 1.0-SNAPSHOT API'

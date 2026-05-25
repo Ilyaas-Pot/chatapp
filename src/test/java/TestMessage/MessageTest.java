@@ -48,7 +48,7 @@ public class MessageTest {
 
     @Test
     public void testTotalMessages() {
-
+        Message.resetTotalMessages();
         new Message(1, "+27838968976", "Hello");
         new Message(2, "+27838968976", "How are you");
 
