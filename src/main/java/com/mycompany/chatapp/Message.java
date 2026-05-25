@@ -19,7 +19,7 @@ public class Message {
     private String recipient;
     private String messageText;
     private String messageHash;
-    
+    // Static variable to keep track of total messages created
     private static int totalMessages = 0;
 
     public Message(int messageNumber, String recipient, String messageText) {
@@ -27,24 +27,29 @@ public class Message {
         this.messageNumber = messageNumber;
         this.recipient = recipient;
         this.messageText = messageText;
-
+        // Generate message ID and hash automatically
         this.messageID = createMessageID();
         this.messageHash = createMessageHash();
-
+        // Increase total message count
         totalMessages++;
     }
 
     public String createMessageID() {
+        //Generate random number
         long number = (long)(Math.random() * 1000000000L);
         return String.format("%010d", number);
     }
     public boolean checkMessageID() {
+        // Format number to always contain 10 digits
         return messageID.length() <= 10;
     }
+    // Validates recipient cellphone number
+    // Must start with +27 and be exactly 12 characters long
     public boolean checkRecipientCell() {
         return recipient.startsWith("+27") && recipient.length() == 12;
     }
-
+    // Creates a message hash using:
+    // First 2 digits of ID + message number + first and last word
     public String createMessageHash() {
 
         String[] words = messageText.split(" ");
@@ -62,7 +67,7 @@ public class Message {
 
         return "Message successfully sent.";
     }
-
+    // Displays all message details in a formatted string
     public String printMessages() {
        return "\n-----------------------------------"
          + "\nMessage Details"
@@ -81,7 +86,7 @@ public class Message {
         JSONArray messageList = new JSONArray();
 
         JSONObject messageDetails = new JSONObject();
-
+        // Add message details to JSON object
         messageDetails.put("MessageID", messageID);
         messageDetails.put("MessageHash", messageHash);
         messageDetails.put("Recipient", recipient);
@@ -96,6 +101,7 @@ public class Message {
             file.close();
 
         } catch (IOException e) {
+             // Display error if file writing fails
             System.out.println("Error writing JSON file.");
         }
      }   
