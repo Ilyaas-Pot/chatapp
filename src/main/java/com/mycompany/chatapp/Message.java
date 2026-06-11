@@ -260,28 +260,7 @@ public class Message {
      * @param id The message ID to search for
      * @return Formatted string with recipient and message, or "Message not found"
      */
-       public static String searchByMessageID(String id) {
-        for (int i = 0; i < messageIDs.size(); i++) {
-         if (messageIDs.get(i).equals(id)) {
-            String message = "";
-            String recipient = "";
-            
-            // Find which array contains this message
-            if (i < sentMessages.size()) {
-                message = sentMessages.get(i);
-            } else if (i < storedMessages.size()) {
-                message = storedMessages.get(i);
-            }
-            
-            if (i < recipientList.size()) {
-                recipient = recipientList.get(i);
-            }
-            
-            return "Recipient: " + recipient + "\nMessage: " + message;
-        }
-    }
-    return "Message not found";
-}
+       
         /**
      * Searches for all messages sent to a specific recipient.
      * 
