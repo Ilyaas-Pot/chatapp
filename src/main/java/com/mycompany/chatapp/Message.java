@@ -288,24 +288,7 @@ public class Message {
      * @param recipientNum The recipient phone number to search for
      * @return All messages found for that recipient, or "No messages found"
      */
-         public static String searchByRecipient(String recipientNum) {
-          StringBuilder result = new StringBuilder();
-    
-          for (int i = 0; i < recipientList.size(); i++) {
-           if (recipientList.get(i) != null && recipientList.get(i).equals(recipientNum)) {
-              if (i < sentMessages.size()) {
-                result.append(sentMessages.get(i)).append("\n");
-             } else if (i < storedMessages.size()) {
-                result.append(storedMessages.get(i)).append("\n");
-             }
-         }
-     }
-    
-    if (result.length() == 0) {
-        return "No messages found";
-    }
-    return result.toString().trim();
-}
+         
       /**
      * Finds and returns the longest message in the storedMessages array.
      * 
@@ -330,33 +313,7 @@ public class Message {
      * @param hash The message hash to delete
      * @return Success message with deleted text, or "Hash not found"
      */ 
-        public static String deleteMessageByHash(String hash) {
-        for (int i = 0; i < messageHashes.size(); i++) {
-         if (messageHashes.get(i).equals(hash)) {
-            String deletedMessage = "";
-            
-            if (i < sentMessages.size()) {
-                deletedMessage = sentMessages.get(i);
-                sentMessages.remove(i);
-            } else if (i < storedMessages.size()) {
-                deletedMessage = storedMessages.get(i);
-                storedMessages.remove(i);
-            } else if (i < disregardedMessages.size()) {
-                deletedMessage = disregardedMessages.get(i);
-                disregardedMessages.remove(i);
-            }
-            
-            messageHashes.remove(i);
-            messageIDs.remove(i);
-            if (i < recipientList.size()) {
-                recipientList.remove(i);
-            }
-            
-            return "Message: " + deletedMessage + " successfully deleted.";
-        }
-    }
-    return "Hash not found.";
-}
+        
      /**
      * Displays all sent messages with their details.
      * 
