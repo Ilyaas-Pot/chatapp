@@ -44,14 +44,7 @@ public class Message {
      // Static variable to keep track of total messages created
      private static int totalMessages = 0;
     
-     // Part 3 Arrays - populated as messages are sent, stored, or discarded
-       private static java.util.ArrayList<String> sentMessages = new java.util.ArrayList<>();
-       private static java.util.ArrayList<String> disregardedMessages = new java.util.ArrayList<>();
-       private static java.util.ArrayList<String> storedMessages = new java.util.ArrayList<>();
-
-       private static java.util.ArrayList<String> messageHashes = new java.util.ArrayList<>();
-       private static java.util.ArrayList<String> messageIDs = new java.util.ArrayList<>();
-       private static java.util.ArrayList<String> recipientList = new java.util.ArrayList<>();
+     
 
      public Message(int messageNumber, String recipient, String messageText) {
 
