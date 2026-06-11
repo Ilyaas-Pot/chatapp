@@ -21,5 +21,5 @@ ChatApp is a Java console application where users can register, log in, and send
 Right-click the project and select Test
 Or run: mvn test
 
-
-video is on Arc because it was too large to upload here(even after zipping)
+link to unlisted YouTube video will also be on arc
+https://youtu.be/X4T_Fe9wBj4
