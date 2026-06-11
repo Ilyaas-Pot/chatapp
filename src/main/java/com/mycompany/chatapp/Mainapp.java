@@ -163,15 +163,23 @@ public class Mainapp {
         System.out.println("===================");
         System.out.println("Welcome to ChatApp.");
         System.out.println("===================");
+         Message.loadStoredMessages();
+        if (Message.hasStoredMessages()) {
+        System.out.println("You have " + Message.returnTotalStoredMessages() + " stored message(s) waiting.");
+        } else {
+        System.out.println("No stored messages found.");
+        }
 
             int choice = 0;
 
             while (choice != 3) {
 
-                System.out.println("\n===== MENU =====");
-                System.out.println("1. Send Messages");
-                System.out.println("2. Show recently sent messages");
-                System.out.println("3. Quit");
+                System.out.println("\n------------------------------------------");
+                System.out.println("Please choose an option:");
+                System.out.println("1) Send Messages");
+                System.out.println("2) Show recently sent messages");
+                System.out.println("3) Quit");
+                System.out.println("4) Stored Messages");
 
                 System.out.print("Choose an option: ");
                 choice = Integer.parseInt(input.nextLine());
@@ -199,8 +207,6 @@ public class Mainapp {
                          "Message exceeds 250 characters by "
                           + (text.length() - 250)
                            );
-
-                          continue;
                          }
  
                           Message msg =
@@ -211,8 +217,6 @@ public class Mainapp {
                               System.out.println(
                               "Cell number incorrectly formatted."
                              );
-
-                             continue;
                              }
 
 
@@ -231,10 +235,8 @@ public class Mainapp {
 
                                 // SEND
                                 if (messageOption == 1) {
-
-                               System.out.println(msg.sentMessage());
-
-                               System.out.println(msg.printMessages());
+                                  System.out.println(msg.sentMessage("Send"));
+                                  System.out.println(msg.printMessages());
 
                                }
 
@@ -242,19 +244,16 @@ public class Mainapp {
                               // DISCARD
                                else if (messageOption == 2) {
 
-                              System.out.println("Message disregarded.");
+                              System.out.println(msg.sentMessage("Discard"));
+                              
 
                               }
 
 
                                // STORE
                                else if (messageOption == 3) {
-
-                               msg.storeMessage();
-
-                               System.out.println(
-                                  "Message successfully stored in messages.json"
-                                );
+                                System.out.println(msg.sentMessage("Store"));
+                                
 
                                 }
 
@@ -270,16 +269,81 @@ public class Mainapp {
 
     break;
 
-                    case 2:
-                        System.out.println("Coming Soon.");
+                    case 2:                       
+                       System.out.println("Coming Soon.");
                         break;
 
-                    case 3:
-                        System.out.println("Thank you for using Chatapp,Goodbye!");
+                    case 3:                        
+                     System.out.println("Goodbye, and thank you for using ChatApp!");
                         break;
+                        
+                         case 4:
+                          String storedChoice = "";
+                           while (!storedChoice.equals("g")) {
 
-                    default:
-                        System.out.println("Invalid option.");
+                          System.out.println("\n==========================================");
+                          System.out.println("         STORED MESSAGES MENU");
+                          System.out.println("==========================================");
+                          System.out.println("a) Display all stored messages");
+                          System.out.println("b) Display the longest stored message");
+                          System.out.println("c) Search for a message by ID");
+                          System.out.println("d) Search all messages for a recipient");
+                          System.out.println("e) Delete a message using its hash");
+                          System.out.println("f) Display full message report");
+                          System.out.println("g) Return to main menu");
+                          System.out.print("Enter your choice: ");
+                          storedChoice = input.nextLine().trim();
+
+                          switch (storedChoice) {
+                           case "a":
+                             
+                             System.out.println("\n=== ALL STORED MESSAGES ===");
+                             if (Message.getStoredMessages().isEmpty()) {
+                              System.out.println("No stored messages found.");
+                             } else {
+                              for (int i = 0; i < Message.getStoredMessages().size(); i++) {
+                             System.out.println("-----------------------------");
+                             System.out.println("Message: " + Message.getStoredMessages().get(i));
+                              if (i < Message.getRecipientList().size()) {
+                              System.out.println("Recipient: " + Message.getRecipientList().get(i));
+                              }
+                            }
+                           }
+                             break;
+                           case "b":
+                            
+                            System.out.println("Longest stored message:");
+                            System.out.println(Message.displayLongestMessage());
+                             break;
+                           case "c":
+                            System.out.print("Enter Message ID: ");
+                            String sid = input.nextLine();
+                            System.out.println(Message.searchByMessageID(sid));
+                             break;
+                           case "d":
+                            System.out.print("Enter recipient number: ");
+                            String srecip = input.nextLine();
+                            System.out.println(Message.searchByRecipient(srecip));
+                             break;
+                           case "e":
+                            System.out.print("Enter message hash: ");
+                            String shash = input.nextLine();
+                            System.out.println(Message.deleteMessageByHash(shash));
+                             break;
+                           case "f":
+                            System.out.println(Message.generateReport());
+                             break;
+                           case "g":
+                            System.out.println("Returning to main menu...");
+                             break;
+                          default:
+                            System.out.println("Invalid option.");
+                        }
+                    }
+                         break; 
+
+                         default:
+                          System.out.println("Invalid option.");
                 }
             }
    

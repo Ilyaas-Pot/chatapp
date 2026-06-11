@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestMessage.MessageTest" time="0.134" tests="1" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestMessage.MessageTest" time="0.231" tests="11" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="25"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,9 +15,9 @@
     <property name="user.country" value="ZA"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Apache NetBeans\jdk\bin"/>
-    <property name="sun.java.command" value="C:\Users\DTC\AppData\Local\Temp\surefire3245519250365146660\surefirebooter-20260525214935425_3.jar C:\Users\DTC\AppData\Local\Temp\surefire3245519250365146660 2026-05-25T21-49-35_166-jvmRun1 surefire-20260525214935425_1tmp surefire_0-20260525214935425_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\DTC\AppData\Local\Temp\surefire9852585720763590521\surefirebooter-20260611180124290_3.jar C:\Users\DTC\AppData\Local\Temp\surefire9852585720763590521 2026-06-11T18-01-23_965-jvmRun1 surefire-20260611180124290_1tmp surefire_0-20260611180124290_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="test" value="TestMessage.MessageTest#testTotalMessages"/>
+    <property name="test" value="TestMessage.MessageTest"/>
     <property name="surefire.test.class.path" value="C:\Users\DTC\Documents\prog\New folder\chatapp\target\test-classes;C:\Users\DTC\Documents\prog\New folder\chatapp\target\classes;C:\Users\DTC\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.3\junit-jupiter-api-5.10.3.jar;C:\Users\DTC\.m2\repository\org\junit\platform\junit-platform-commons\1.10.3\junit-platform-commons-1.10.3.jar;C:\Users\DTC\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\DTC\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.3\junit-jupiter-params-5.10.3.jar;C:\Users\DTC\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.3\junit-jupiter-engine-5.10.3.jar;C:\Users\DTC\.m2\repository\org\junit\platform\junit-platform-engine\1.10.3\junit-platform-engine-1.10.3.jar;C:\Users\DTC\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\DTC\.m2\repository\com\googlecode\json-simple\json-simple\1.1.1\json-simple-1.1.1.jar;C:\Users\DTC\.m2\repository\junit\junit\4.10\junit-4.10.jar;C:\Users\DTC\.m2\repository\org\hamcrest\hamcrest-core\1.1\hamcrest-core-1.1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\DTC"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\DTC\AppData\Local\Temp\surefire3245519250365146660\surefirebooter-20260525214935425_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\DTC\AppData\Local\Temp\surefire9852585720763590521\surefirebooter-20260611180124290_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="25.0.2+10-LTS"/>
@@ -62,13 +62,15 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="69.0"/>
   </properties>
-  <testcase name="testTotalMessages" classname="TestMessage.MessageTest" time="0.062">
-    <error message="Not supported yet." type="java.lang.UnsupportedOperationException"><![CDATA[java.lang.UnsupportedOperationException: Not supported yet.
-	at com.mycompany.chatapp.Message.resetTotalMessages(Message.java:22)
-	at TestMessage.MessageTest.testTotalMessages(MessageTest.java:51)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
-]]></error>
-  </testcase>
+  <testcase name="testMessageHash" classname="TestMessage.MessageTest" time="0.069"/>
+  <testcase name="testDisplayReport_containsRequiredFields" classname="TestMessage.MessageTest" time="0.007"/>
+  <testcase name="testSentMessagesArray_correctlyPopulated" classname="TestMessage.MessageTest" time="0.004"/>
+  <testcase name="testDeleteByHash_removesCorrectMessage" classname="TestMessage.MessageTest" time="0.018"/>
+  <testcase name="testSearchByMessageID_returnsCorrectMessage" classname="TestMessage.MessageTest" time="0.004"/>
+  <testcase name="testRecipientCellFail" classname="TestMessage.MessageTest" time="0.008"/>
+  <testcase name="testMessageLengthSuccess" classname="TestMessage.MessageTest" time="0.003"/>
+  <testcase name="testSearchByRecipient_returnsAllMatchingMessages" classname="TestMessage.MessageTest" time="0.003"/>
+  <testcase name="testRecipientCellSuccess" classname="TestMessage.MessageTest" time="0.003"/>
+  <testcase name="testTotalMessages" classname="TestMessage.MessageTest" time="0.003"/>
+  <testcase name="testDisplayLongestMessage_returnsCorrectMessage" classname="TestMessage.MessageTest" time="0.002"/>
 </testsuite>
