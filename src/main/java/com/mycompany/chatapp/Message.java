@@ -382,39 +382,7 @@ public class Message {
      * Loads stored messages from messages.json file into storedMessages array.
      * Attribution: json-simple library - https://code.google.com/archive/p/json-simple/
      */
-         public static void loadStoredMessages() {
-    storedMessages.clear();  // Clear before loading
-    
-    try (BufferedReader reader = new BufferedReader(new FileReader("messages.json"))) {
-        String line;
-        JSONParser parser = new JSONParser();
         
-        while ((line = reader.readLine()) != null) {
-            line = line.trim();
-            if (line.isEmpty()) continue;
-            
-            try {
-                JSONObject obj = (JSONObject) parser.parse(line);
-                String msgText = (String) obj.get("Message");
-                String msgRecip = (String) obj.get("Recipient");
-                String msgHash = (String) obj.get("MessageHash");
-                String msgID = (String) obj.get("MessageID");
-                
-                if (msgText != null) {
-                    storedMessages.add(msgText);
-                    if (msgHash != null) messageHashes.add(msgHash);
-                    if (msgID != null) messageIDs.add(msgID);
-                    if (msgRecip != null) recipientList.add(msgRecip);
-                }
-            } catch (Exception e) {
-                // Skip malformed lines
-            }
-        }
-        System.out.println("Loaded " + storedMessages.size() + " stored messages.");
-    } catch (IOException e) {
-        System.out.println("No stored messages file found yet.");
-    }
-}
       /**
      * Checks if there are any stored messages in the storedMessages array.
      * 
